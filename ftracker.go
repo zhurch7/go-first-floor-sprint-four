@@ -48,19 +48,19 @@ func ShowTrainingInfo(action int, trainingType string, duration, weight, height 
 	// ваш код здесь
 	switch trainingType {
 	case "Бег":
-		distance := distance(action)                               // дистанция бега
-		speed := meanSpeed(action, duration)                       // скорость бега
-		calories := RunningSpentCalories(action, weight, duration) // потраченные калории
+		distance := distance(action)
+		speed := meanSpeed(action, duration)
+		calories := RunningSpentCalories(action, weight, duration)
 		return fmt.Sprintf("Тип тренировки: %s\nДлительность: %.2f ч.\nДистанция: %.2f км.\nСкорость: %.2f км/ч\nСожгли калорий: %.2f\n", trainingType, duration, distance, speed, calories)
 	case "Ходьба":
-		distance := distance(action)                                       // дистанция хотьбы
-		speed := meanSpeed(action, duration)                               // скорость хотьбы
-		calories := WalkingSpentCalories(action, duration, weight, height) // потраченные калории
+		distance := distance(action)
+		speed := meanSpeed(action, duration)
+		calories := WalkingSpentCalories(action, duration, weight, height)
 		return fmt.Sprintf("Тип тренировки: %s\nДлительность: %.2f ч.\nДистанция: %.2f км.\nСкорость: %.2f км/ч\nСожгли калорий: %.2f\n", trainingType, duration, distance, speed, calories)
 	case "Плавание":
-		distance := float64(lengthPool) * float64(countPool) / mInKm               // дистанция плавания
-		speed := swimmingMeanSpeed(lengthPool, countPool, duration)                // скорость плавания
-		calories := SwimmingSpentCalories(lengthPool, countPool, duration, weight) // потраченные калории
+		distance := distance(action)
+		speed := swimmingMeanSpeed(lengthPool, countPool, duration)
+		calories := SwimmingSpentCalories(lengthPool, countPool, duration, weight)
 		return fmt.Sprintf("Тип тренировки: %s\nДлительность: %.2f ч.\nДистанция: %.2f км.\nСкорость: %.2f км/ч\nСожгли калорий: %.2f\n", trainingType, duration, distance, speed, calories)
 	default:
 		return "неизвестный тип тренировки"
